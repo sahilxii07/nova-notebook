@@ -1,33 +1,26 @@
+import Navbar from "../components/Navbar/Navbar";
+import Sidebar from "../components/Sidebar/Sidebar";
+import Notebook from "../components/Notebook/Notebook";
+import Toolbar from "../components/Toolbar/Toolbar";
+
 function Home() {
   return (
     <div className="app">
-
-      <header className="navbar">
-        <h1>🚀 Nova Notebook</h1>
-      </header>
+      <Navbar />
 
       <main className="workspace">
+        <Sidebar />
 
-        <aside className="sidebar">
-          <h3>Explorer</h3>
-
-          <button>+ New Notebook</button>
-
-          <ul>
-            <li>📓 Notebook 1</li>
-          </ul>
-        </aside>
-
-        <section className="editor">
-          <h2>Welcome 👋</h2>
-
-          <p>
-            Nova Notebook v0.1 is running successfully.
-          </p>
-        </section>
-
+        <div
+          style={{
+            flex: 1,
+            padding: "40px",
+          }}
+        >
+          <Toolbar />
+          <Notebook />
+        </div>
       </main>
-
     </div>
   );
 }
